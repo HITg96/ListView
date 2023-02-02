@@ -1,7 +1,9 @@
 package com.example.listview;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,11 +26,17 @@ public class MainActivity extends AppCompatActivity {
         AdapterView.OnItemClickListener clickListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intencja = new Intent(MainActivity.this, ListaPrzepisow.class);
+                intencja.putExtra("Kategoria", i);
+                startActivity(intencja);
+
                 String kategoria = adapterView.getItemAtPosition(i).toString();
                 Toast.makeText(MainActivity.this, kategoria, Toast.LENGTH_LONG).show();
             }
         };
         listView.setOnItemClickListener(clickListener);
+
+
 
 
 
@@ -70,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         listview2.setOnItemClickListener(kliknieteDynamiczne);
+
+
 
 
     }
