@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ListView</string>
+    <string-array name="kategoria">
+        <item>Napoje</item>
+        <item>Desery</item>
+        <item>Ciasta</item>
+        <item>Ciasteczka</item>
+    </string-array>
 </resources>
